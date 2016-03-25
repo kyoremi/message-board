@@ -1,5 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
+    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
     メッセージ一覧
   </div>
     
@@ -11,11 +12,16 @@
     <% end %>
   </div>
 </div>
+<div class="form-group">
 <%= form_for(@message) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
+  <label>名前:</label>
+  <%= f.text_field :name ,class:"form control"  %>
+</div>
+<br/>
+<div class="form-group">
+  <label>内容:</label>
+ <%= f.text_area :body, class: "form-control", size: "5x2"%>
+ <br/>
   <%= f.submit class: "btn btn-sm btn-primary" %>
+ </div>
 <% end %>
