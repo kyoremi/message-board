@@ -18,7 +18,10 @@ class MessagesController < ApplicationController
  end
   def edit
   end
-  
+  def destroy
+    @message.destroy
+    redirect_to root_path, notice: 'メッセージを削除しました'
+  end
   def update
     if @message.update(message_params)
       # 保存に成功した場合はトップページへリダイレクト
